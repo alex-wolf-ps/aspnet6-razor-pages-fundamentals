@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Wired Brain Coffee Admin</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WiredBrainCoffeeAdmin.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar top-nav wired-nav">
+            <a href="#">Wired Brain Coffee</a><img id="logo" src="~/images/menu/design.png"/> 
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <ul class="nav flex-column wired-nav">
+                  <li class="nav-header">
+                    Utilities
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" asp-page="Index">Dashboard</a>
+                  </li>
+                    <li class="nav-header">
+                     Menu Items
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" asp-page="ViewMenuItems">View All</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" asp-page="AddMenuItem">Add New</a>
+                  </li>
+                  <li class="nav-header">
+                    Orders
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">(Coming soon)</a>
+                  </li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <main role="main">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+    <footer class="text-muted">
+        <div class="container">
+            &copy; 2022 - WiredBrainCoffeeAdmin - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

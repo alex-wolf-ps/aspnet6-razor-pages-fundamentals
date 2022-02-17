@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container-fluid dashboard">
+    <h1 class="h2">Welcome to Wired Brain Coffee!</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Latest Products</h3>
+            @await Component.InvokeAsync("MenuItemsList", new { itemCount = 3 })
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                Reminders
+              </div>
+              <div class="card-body">
+                    @if(DateTime.Today.DayOfWeek == DayOfWeek.Wednesday)
+                    {
+                        <p>Don't forget your timesheets!</p>
+                    }
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                Weekly Fun facts
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cups of Coffee Sold: 2500</li>
+                <li class="list-group-item">Total Revenue: $25,000</li>
+                <li class="list-group-item">Customers Served: 1800</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                Request Help
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Contact our IT Team</h5>
+                <p class="card-text">Having an issue with the site? Let us know!</p>
+                <a href="#" class="btn btn-primary">Submit</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

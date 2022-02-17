@@ -1,0 +1,117 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background: #353535;
+}
+
+.wired-nav a, .wired-nav a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.wired-nav a:hover {
+    color: #ccc;
+}
+
+.last {
+    height: 100%;
+}
+
+.wired-nav {
+    background-color: #353535;
+}
+
+.wired-nav a {
+    color: white !important;
+}
+
+html, body, .fill {
+    height: 100%;
+}
+
+.wired-nav h6 {
+    background-color: #757575;
+    padding: 10px;
+    color: #eee;
+}
+
+footer {
+    padding: 25px;
+    background-color: #353535;
+}
+
+.nav-item {
+    display: block;
+}
+
+main {
+    min-height: 1000px;
+    background-color: #fff;
+    padding: 25px;
+}
+
+.top-nav {
+    padding: 10px 10px 10px 25px;
+}
+
+.top-nav a {
+    font-size: 1.25em;
+}
+
+.logo {
+    font-size: 1.25em;
+}
+
+#logo {
+    max-width: 100px;
+    float: right;
+    display: block;
+}
+
+.nav-header {
+    padding: 5px 15px;
+    color: white;
+    background: #757575;
+}
+
+form {
+    max-width: 800px;
+}
+
+.menu-items img {
+    max-width: 100px;
+}
+
+.validation-summary-errors ul {
+    color: red;
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.add-edit-form img {
+    max-width: 250px;
+    margin: 25px 0;
+}
+
+.item-preview {
+    max-width: 250px;
+}
+
+.dashboard .card {
+    margin: 50px 0;
+}
