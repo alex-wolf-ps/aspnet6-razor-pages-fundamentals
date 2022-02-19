@@ -52,6 +52,7 @@ html, body, .fill {
 footer {
     padding: 25px;
     background-color: #353535;
+    color: white;
 }
 
 .nav-item {
@@ -113,5 +114,19 @@ form {
 }
 
 .dashboard .card {
-    margin: 50px 0;
+    margin: 25px 0;
+}
+
+.left-nav img {
+    max-width: 100%;
+    margin-top: 50px;
+}
+
+.table {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 1.25em;
+    color: #198754;
 }

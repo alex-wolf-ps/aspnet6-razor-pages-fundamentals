@@ -8,51 +8,79 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WiredBrainCoffeeAdmin.styles.css" asp-append-version="true" />
 </head>
+
+@{
+    var pathKey = Context.Request.Path;
+}
+
 <body>
     <header>
         <nav class="navbar top-nav wired-nav">
-            <a href="#">Wired Brain Coffee</a><img id="logo" src="~/images/menu/design.png"/> 
+            <a href="#">Wired Brain Coffee</a><img id="logo" src="~/images/menu/design.png" />
         </nav>
     </header>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2 left-nav">
                 <ul class="nav flex-column wired-nav">
-                  <li class="nav-header">
-                    Utilities
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" asp-page="Index">Dashboard</a>
-                  </li>
                     <li class="nav-header">
-                     Menu Items
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" asp-page="ViewMenuItems">View All</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" asp-page="AddMenuItem">Add New</a>
-                  </li>
-                  <li class="nav-header">
-                    Orders
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">(Coming soon)</a>
-                  </li>
+                        Utilities
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="Index">Dashboard</a>
+                    </li>
+                    <li class="nav-header">
+                        Menu Items
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="ViewMenuItems">View All</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="AddMenuItem">Add New</a>
+                    </li>
+                    <li class="nav-header">
+                        Orders
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">(Coming soon)</a>
+                    </li>
                 </ul>
+
+                @switch (pathKey)
+                {
+                    case "/":
+                        <img src="~/images/menu/cake.jpg" />
+                        break;
+                    case "/menu":
+                        <img src="~/images/menu/waffles.jpg" />
+                        break;
+                    case "/menu/add":
+                        <img src="~/images/menu/salad1.jpg" />
+                        break;
+                }
             </div>
             <div class="col-md-10">
-                <main role="main">
+                <main>
                     @RenderBody()
                 </main>
+
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>&copy; 2022 - WiredBrainCoffeeAdmin</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>1234 Wired Brain Way</p>
+                                <p>Awesome City, CA 55555</p>
+                                <p>555-123-4567</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
     </div>
-    <footer class="text-muted">
-        <div class="container">
-            &copy; 2022 - WiredBrainCoffeeAdmin - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
