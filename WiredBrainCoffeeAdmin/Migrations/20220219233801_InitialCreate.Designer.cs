@@ -11,7 +11,7 @@ using WiredBrainCoffeeAdmin.Data;
 namespace WiredBrainCoffeeAdmin.Migrations
 {
     [DbContext(typeof(WiredBrainContext))]
-    [Migration("20220217030021_InitialCreate")]
+    [Migration("20220219233801_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,7 +59,7 @@ namespace WiredBrainCoffeeAdmin.Migrations
                         {
                             Id = 1,
                             Category = "Food",
-                            Created = new DateTime(2022, 2, 16, 22, 0, 21, 741, DateTimeKind.Local).AddTicks(695),
+                            Created = new DateTime(2022, 2, 19, 18, 38, 1, 288, DateTimeKind.Local).AddTicks(3894),
                             Description = "This is a cupcake.",
                             ImgFileName = "cupcake.png",
                             Name = "Cup Cake",

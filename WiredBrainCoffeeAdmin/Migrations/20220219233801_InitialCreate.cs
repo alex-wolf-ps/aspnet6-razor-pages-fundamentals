@@ -31,7 +31,7 @@ namespace WiredBrainCoffeeAdmin.Migrations
             migrationBuilder.InsertData(
                 table: "MenuItems",
                 columns: new[] { "Id", "Category", "Created", "Description", "ImgFileName", "Name", "Price", "ShortDescription" },
-                values: new object[] { 1, "Food", new DateTime(2022, 2, 16, 22, 0, 21, 741, DateTimeKind.Local).AddTicks(695), "This is a cupcake.", "cupcake.png", "Cup Cake", 5m, "Short" });
+                values: new object[] { 1, "Food", new DateTime(2022, 2, 19, 18, 38, 1, 288, DateTimeKind.Local).AddTicks(3894), "This is a cupcake.", "cupcake.png", "Cup Cake", 5m, "Short" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

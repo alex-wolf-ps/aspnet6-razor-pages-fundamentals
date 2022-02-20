@@ -30,27 +30,24 @@
               <div class="card-header">
                 Weekly Fun facts
               </div>
-              <ul class="list-group list-group-flush">
+              <ul class="list-group list-group-flush list-group-striped">
                 <li class="list-group-item">Cups of Coffee Sold: 2500</li>
                 <li class="list-group-item">Total Revenue: $25,000</li>
                 <li class="list-group-item">Customers Served: 1800</li>
+                <li class="list-group-item">One Day Sales Record: $5000</li>
               </ul>
             </div>
 
             <div class="card">
-              <div class="card-header">
+            <div class="card-header">
                 Request Help
-              </div>
-              <div class="card-body">
+            </div>
+            <div class="card-body">
                 <h5 class="card-title">Contact our IT Team</h5>
                 <p class="card-text">Having an issue with the site? Let us know!</p>
-                <form class="form">
-                    <textarea  asp-for="HelpText" class="form-control mb-3"></textarea>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                </form>
-                
-              </div>
+                <a asp-page="help" class="btn btn-success">Request Help</a>
             </div>
+        </div>
         </div>
     </div>
 </div>

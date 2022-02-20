@@ -12,15 +12,19 @@ namespace WiredBrainCoffeeAdmin.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        
-        public List<SurveyItem> SurveyItems { get; set; }
+        private readonly IHttpClientFactory _client;
+
+        public List<SurveyItem> SurveyItems { get; set; } = new List<SurveyItem>();
         
         [BindProperty]
         public string HelpText { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public string HelpResponse { get; set; }
+
+        public IndexModel(ILogger<IndexModel> logger, IHttpClientFactory client)
         {
             _logger = logger;
+            _client = client;
         }
 
         public void OnGet()
@@ -28,6 +32,8 @@ namespace WiredBrainCoffeeAdmin.Pages
             string text = System.IO.File.ReadAllText("wwwroot/SampleData/survey.json");
             SurveyItems = JsonSerializer.Deserialize<List<SurveyItem>>(text);
         }
+
+        
 
         public class SurveyItem {
             public string Question { get; set; }
