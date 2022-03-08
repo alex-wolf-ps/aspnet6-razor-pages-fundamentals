@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="~/WiredBrainCoffeeAdmin.styles.css" asp-append-version="true" />
 </head>
 
-@{
-    var pathKey = Context.Request.Path;
-}
 
 <body>
     <header>
@@ -48,8 +45,11 @@
                         <a class="nav-link" href="#">(Coming soon)</a>
                     </li>
                 </ul>
-
-                @switch (pathKey)
+                
+                @{
+                    var urlPath = Context.Request.Path;
+                }
+                @switch (urlPath)
                 {
                     case "/":
                         <img src="~/images/menu/cake.jpg" />
