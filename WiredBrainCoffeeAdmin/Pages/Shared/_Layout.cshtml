@@ -19,26 +19,26 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" asp-page="index">Dashboard</a>
+                                <a class="nav-link" aria-current="page">Dashboard</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Menu Items
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a class="dropdown-item" asp-page="viewmenuitems">View All</a></li>
-                                    <li><a class="dropdown-item" asp-page="addmenuitem">Add New</a></li>
+                                    <li><a class="dropdown-item">View All</a></li>
+                                    <li><a class="dropdown-item">Add New</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link disabled">Orders (Coming soon)</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-page="help">Help</a>
+                                <a class="nav-link">Help</a>
                             </li>
                         </ul>
                     </div>
-                    <a class="navbar-brand float-right" asp-page="index">Wired Brain Coffee</a>
+                    <a class="navbar-brand float-right">Wired Brain Coffee</a>
                 </div>
             </nav>
         </header>
@@ -59,24 +59,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="footer-pic">
-                        @{
-                            var urlPath = Context.Request.Path;
-                        }
-                        @switch (urlPath)
-                        {
-                            case "/":
-                                <img src="~/images/menu/cake.jpg" />
-                                break;
-                            case "/help":
-                                <img src="~/images/menu/cappucino.png" />
-                                break;
-                            case "/menu":
-                                <img src="~/images/menu/waffles.jpg" />
-                                break;
-                            case "/menu/add":
-                                <img src="~/images/menu/salad1.jpg" />
-                                break;
-                        }
+                        <p>Picture content goes here.</p>
                     </div>
                 </div>
             </div>

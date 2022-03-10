@@ -14,8 +14,6 @@ namespace WiredBrainCoffeeAdmin.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public List<SurveyItem> SurveyItems { get; set; } = new List<SurveyItem>();
-
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
@@ -23,8 +21,7 @@ namespace WiredBrainCoffeeAdmin.Pages
 
         public void OnGet()
         {
-            string text = System.IO.File.ReadAllText("wwwroot/SampleData/survey.json");
-            SurveyItems = JsonSerializer.Deserialize<List<SurveyItem>>(text);
+
         }
     }
 }

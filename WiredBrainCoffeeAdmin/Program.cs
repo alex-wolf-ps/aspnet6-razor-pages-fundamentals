@@ -4,13 +4,6 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("WiredBrain") ?? "Data Source=WiredBrain.db";
 
-builder.Services.AddSqlite<WiredBrainContext>(connectionString);
-builder.Services.AddHttpClient();
-builder.Services.AddHttpClient<ITicketService, TicketService>(httpClient =>
-{
-    httpClient.BaseAddress = new Uri("https://wiredbraincoffeeadmin.azurewebsites.net/");
-});
-
 // Add services to the container.
 builder.Services.AddRazorPages();
 
@@ -25,6 +18,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
