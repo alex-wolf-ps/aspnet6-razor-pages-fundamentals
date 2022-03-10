@@ -39,7 +39,7 @@ namespace WiredBrainCoffeeAdmin.Pages
             {
                 if(Id == 0)
                 {
-                    MenuItem.ImgFileName = MenuItem.Upload.FileName;
+                    MenuItem.ImageFile = MenuItem.Upload.FileName;
                     MenuItem.Category = MenuItem.Category;
                     _context.MenuItems.Add(MenuItem);
                     _context.SaveChanges();
@@ -59,7 +59,7 @@ namespace WiredBrainCoffeeAdmin.Pages
                     savedItem.ShortDescription = MenuItem.ShortDescription;
                     savedItem.Category = MenuItem.Category;
                     savedItem.Price = MenuItem.Price;
-                    savedItem.ImgFileName = MenuItem.Upload is not null ? MenuItem.Upload.FileName : savedItem.ImgFileName;
+                    savedItem.ImageFile = MenuItem.Upload is not null ? MenuItem.Upload.FileName : savedItem.ImageFile;
                     _context.SaveChanges();
 
                     if (MenuItem.Upload != null)

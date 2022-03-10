@@ -3,7 +3,7 @@
 @{
 }
 
-<h1>Request Help</h1>
+<h1 class="h2">Request Help</h1>
 <hr />
 
 @if (!string.IsNullOrEmpty(Model.ResponseMessage))
@@ -11,18 +11,6 @@
     <p class="alert alert-success">@Model.ResponseMessage</p>
 }
 <div class="row">
-    <div class="col-md-6">
-        <table class="table table-striped table-bordered">
-            @foreach(var item in Model.HelpTickets)
-            {
-                <tr>
-                    <td>@item.Id</td>
-                    <td>@item.Description</td>
-                    <td>@item.Status</td>
-                </tr>
-            }
-        </table>
-    </div>
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
@@ -37,5 +25,20 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div class="col-md-6">
+        <h2>Current Issues</h2>
+        <hr />
+        <table class="table table-striped table-bordered">
+            <tbody>
+            @foreach(var item in Model.HelpTickets)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Description</td>
+                    <td>@item.Status</td>
+                </tr>
+            }</tbody>
+        </table>
     </div>
 </div>

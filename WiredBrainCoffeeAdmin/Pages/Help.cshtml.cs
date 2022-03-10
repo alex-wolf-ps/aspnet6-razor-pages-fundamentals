@@ -8,7 +8,7 @@ namespace WiredBrainCoffeeAdmin.Pages
 {
     public class HelpModel : PageModel
     {
-        private readonly ITicketService _client;
+        private readonly ITicketService ticketService;
 
         public List<HelpTicket> HelpTickets { get; set; }
 
@@ -19,20 +19,22 @@ namespace WiredBrainCoffeeAdmin.Pages
 
         public async Task<IActionResult> OnGet()
         {
-            HelpTickets = await _client.GetTickets();
+            HelpTickets = await ticketService.GetTickets();
 
             return Page();
         }
 
         public HelpModel(ITicketService client)
         {
-            _client = client;
+            ticketService = client;
         }
 
         public async Task<IActionResult> OnPost()
         {
-            ResponseMessage = await _client.PostTicket(Ticket);
-            HelpTickets = await _client.GetTickets();
+            ResponseMessage = await ticketService.PostTicket(Ticket);
+
+            HelpTickets = await ticketService.GetTickets();
+
             return Page();
         }
     }

@@ -8,45 +8,10 @@ html {
   }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  margin-bottom: 60px;
-  background: #353535;
-}
-
-.wired-nav a, .wired-nav a:visited {
-    text-decoration: none;
-    color: white;
-}
-
-.wired-nav a:hover {
-    color: #ccc;
-}
-
-.last {
-    height: 100%;
-}
-
-.wired-nav {
-    background-color: #353535;
-}
-
-.wired-nav a {
-    color: white !important;
-}
-
-html, body, .fill {
-    height: 100%;
-}
-
-.wired-nav h6 {
-    background-color: #757575;
-    padding: 10px;
-    color: #eee;
+    margin-bottom: 60px;
+    background: url("../images/cups-dark.png");
+    background-size: cover;
 }
 
 footer {
@@ -55,42 +20,14 @@ footer {
     color: white;
 }
 
-.nav-item {
-    display: block;
-}
-
 main {
     min-height: 1000px;
     background-color: #fff;
     padding: 25px;
 }
 
-.top-nav {
-    padding: 10px 10px 10px 25px;
-}
-
-.top-nav a {
-    font-size: 1.25em;
-}
-
-.logo {
-    font-size: 1.25em;
-}
-
 #logo {
-    max-width: 100px;
-    float: right;
-    display: block;
-}
-
-.nav-header {
-    padding: 5px 15px;
-    color: white;
-    background: #757575;
-}
-
-form {
-    max-width: 800px;
+    max-width: 150px;
 }
 
 .menu-items img {
@@ -117,11 +54,6 @@ form {
     margin: 25px 0;
 }
 
-.left-nav img {
-    max-width: 100%;
-    margin-top: 50px;
-}
-
 .table {
     margin-bottom: 50px;
 }
@@ -129,4 +61,22 @@ form {
 h2 {
     font-size: 1.25em;
     color: #198754;
+}
+
+footer {
+    text-align: center;
+}
+
+.footer-pic img {
+    max-width: 50%;
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+}
+
+textarea.form-control {
+    min-height: 150px;
 }

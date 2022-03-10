@@ -1,7 +1,8 @@
 ﻿@using WiredBrainCoffeeAdmin.Data
 @model List<MenuItem>
 
-<table class="menu-items table table-striped table-bordered table-hover">
+    <div class="table-responsive">
+<table class="table menu-items table-striped table-bordered table-hover">
     <thead>
         <tr>
             <th>ID #</th>
@@ -18,7 +19,7 @@
         {
             <tr>
                 <td>@item.Id</td>
-                <td><img src="~/images/menu/@item.ImgFileName" /></td>
+                <td><img src="~/images/menu/@item.ImageFile" /></td>
                 <td>@item.Category</td>
                 <td>@item.Name</td>
                 <td>@item.ShortDescription.</td>
@@ -28,3 +29,4 @@
         }
     </tbody>
 </table>
+</div>
