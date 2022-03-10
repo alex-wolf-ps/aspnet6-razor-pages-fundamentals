@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WiredBrainCoffeeAdmin.styles.css" asp-append-version="true" />
 </head>
-
-
 <body>
     <div class="container">
         <header>
@@ -40,16 +38,15 @@
                             </li>
                         </ul>
                     </div>
-
                     <a class="navbar-brand float-right" asp-page="index">Wired Brain Coffee</a>
                 </div>
             </nav>
         </header>
-            <main>
-                @RenderBody()
-            </main>
-            <footer>
-        <div class="row">
+        <main>
+            @RenderBody()
+        </main>
+        <footer>
+            <div class="row">
                 <div class="col-md-4">
                     <p>&copy; 2022 - WiredBrainCoffeeAdmin</p>
                     <img id="logo" src="~/images/wired-brain-coffee-logo.png" />
@@ -62,28 +59,28 @@
                 </div>
                 <div class="col-md-4">
                     <div class="footer-pic">
-                    @{
-                        var urlPath = Context.Request.Path;
-                    }
-                    @switch (urlPath)
-                    {
-                        case "/":
-                            <img src="~/images/menu/cake.jpg" />
-                            break;
-                        case "/help":
-                            <img src="~/images/menu/cappucino.png" />
-                            break;
-                        case "/menu":
-                            <img src="~/images/menu/waffles.jpg" />
-                            break;
-                        case "/menu/add":
-                            <img src="~/images/menu/salad1.jpg" />
-                            break;
-                    }
+                        @{
+                            var urlPath = Context.Request.Path;
+                        }
+                        @switch (urlPath)
+                        {
+                            case "/":
+                                <img src="~/images/menu/cake.jpg" />
+                                break;
+                            case "/help":
+                                <img src="~/images/menu/cappucino.png" />
+                                break;
+                            case "/menu":
+                                <img src="~/images/menu/waffles.jpg" />
+                                break;
+                            case "/menu/add":
+                                <img src="~/images/menu/salad1.jpg" />
+                                break;
+                        }
                     </div>
                 </div>
-        </div>
-            </footer>
+            </div>
+        </footer>
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -15,7 +15,12 @@ namespace WiredBrainCoffeeAdmin.ViewComponents
 
         public IViewComponentResult Invoke(int itemCount)
         {
-            return View(_context.MenuItems.Take(itemCount).ToList());
+            if(itemCount != 0)
+            {
+                return View(_context.MenuItems.Take(itemCount).ToList());
+            }
+
+            return View(_context.MenuItems.ToList());
         }
     }
 }
