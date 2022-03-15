@@ -4,11 +4,11 @@ using WiredBrainCoffeeAdmin.Data;
 
 namespace WiredBrainCoffeeAdmin.ViewComponents
 {
-    public class MenuItemsList : ViewComponent
+    public class ProductList : ViewComponent
     {
         private readonly WiredBrainContext _context;
 
-        public MenuItemsList(WiredBrainContext context)
+        public ProductList(WiredBrainContext context)
         {
             _context = context;
         }
@@ -17,10 +17,10 @@ namespace WiredBrainCoffeeAdmin.ViewComponents
         {
             if(itemCount != 0)
             {
-                return View(_context.MenuItems.Take(itemCount).ToList());
+                return View(_context.Products.Take(itemCount).ToList());
             }
 
-            return View(_context.MenuItems.ToList());
+            return View(_context.Products.ToList());
         }
     }
 }

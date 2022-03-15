@@ -1,0 +1,7 @@
+﻿@page "/menu"
+@model WiredBrainCoffeeAdmin.Pages.ViewProductsModel
+<h1 class="h2">All Menu Items <a asp-page="AddProduct" class="btn-success btn float-end">Add New</a></h1>
+<hr />
+<div class="table-responsive">
+    @await Component.InvokeAsync("ProductList")
+</div>

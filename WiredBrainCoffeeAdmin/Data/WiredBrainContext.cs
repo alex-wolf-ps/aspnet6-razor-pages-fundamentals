@@ -6,12 +6,12 @@ namespace WiredBrainCoffeeAdmin.Data
     {
         public WiredBrainContext(DbContextOptions options) : base(options) { }
 
-        public DbSet<MenuItem> MenuItems { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<MenuItem>().HasData(
-                new MenuItem()
+            modelBuilder.Entity<Product>().HasData(
+                new Product()
                     {
                         Id = 1,
                         Name = "Charcuterie",
@@ -21,7 +21,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 4,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 2,
                         Name = "Waffles",
@@ -31,7 +31,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 4,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 3,
                         Name = "Santa Fe Salad",
@@ -41,7 +41,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 4,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 4,
                         Name = "Caesar Salad",
@@ -51,7 +51,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 4,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 5,
                         Name = "Noodles",
@@ -61,7 +61,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 4,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 6,
                         Name = "Red Velvet Cake",
@@ -71,7 +71,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 4,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 7,
                         Name = "Cupcake",
@@ -81,7 +81,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 4,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 8,
                         Name = "Muffin",
@@ -91,7 +91,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 3,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 9,
                         Name = "Chocolate Bites",
@@ -101,7 +101,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 5,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 10,
                         Name = "Frosted Pumpkin Bread",
@@ -111,7 +111,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 4,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 11,
                         Name = "Granola with Nuts",
@@ -121,7 +121,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 3,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 12,
                         Name = "Chocolate Chip Cookies",
@@ -131,7 +131,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 2,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 13,
                         Name = "Fresh Bagels",
@@ -141,7 +141,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 5,
                         Category = "Food",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 14,
                         Name = "Dark Brewed Coffee",
@@ -151,7 +151,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 2,
                         Category = "Coffee",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 15,
                         Name = "Latte",
@@ -161,7 +161,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 3,
                         Category = "Coffee",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 16,
                         Name = "Americano",
@@ -171,7 +171,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 3.5M,
                         Category = "Coffee",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 18,
                         Name = "Designer Espresso",
@@ -181,7 +181,7 @@ namespace WiredBrainCoffeeAdmin.Data
                         Price = 6.5M,
                         Category = "Coffee",
                     },
-                    new MenuItem()
+                    new Product()
                     {
                         Id = 17,
                         Name = "Cappucino",

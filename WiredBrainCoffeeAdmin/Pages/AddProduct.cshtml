@@ -1,42 +1,42 @@
-﻿@page "/menu/edit/{id:int?}"
-@model WiredBrainCoffeeAdmin.Pages.EditMenuItemModel
+﻿@page "/menu/add/{id:int?}"
+@model WiredBrainCoffeeAdmin.Pages.AddProductModel
 
-<h1 class="h2">Edit Menu Item</h1>
+<h1 class="h2">Add New Menu Item</h1>
 <hr />
 <div class="row">
     <div class="col-md-6">
-        @if (!String.IsNullOrEmpty(Model.MenuItem?.ImageFile))
+        @if (!String.IsNullOrEmpty(Model.Product?.ImageFile))
         {
-            <img class="item-preview" src="~/images/menu/@Model.MenuItem?.ImageFile" />
+            <img class="item-preview" src="~/images/menu/@Model.Product?.ImageFile" />
         }
         <form method="post" class="add-edit-form" enctype="multipart/form-data">
             <div asp-validation-summary="All"></div>
             <div class="mb-3">
                 <label class="form-label">Name</label>
-                <input type="text" asp-for="MenuItem.Name" class="form-control" />
+                <input type="text" asp-for="Product.Name" class="form-control" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Category</label>
-                <select class="form-control" asp-for="MenuItem.Category">
+                <select class="form-control" asp-for="Product.Category">
                     <option value="Coffee">Coffee</option>
                     <option value="Food">Food</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Short Description</label>
-                <input type="text" asp-for="MenuItem.ShortDescription" class="form-control" />
+                <input type="text" asp-for="Product.ShortDescription" class="form-control" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Long Description</label>
-                <textarea asp-for="MenuItem.Description" class="form-control"></textarea>
+                <textarea asp-for="Product.Description" class="form-control"></textarea>
             </div>
             <div class="mb-3">
                 <label class="form-label">Price</label>
-                <input type="number" asp-for="MenuItem.Price" class="form-control" />
+                <input type="number" asp-for="Product.Price" class="form-control" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Image</label>
-                <input type="file" asp-for="MenuItem.Upload" class="form-control" />
+                <input type="file" asp-for="Product.Upload" class="form-control" />
             </div>
             <button type="submit" class="btn btn-success float-right">Submit</button>
         </form>

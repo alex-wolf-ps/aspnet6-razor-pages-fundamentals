@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WiredBrainCoffeeAdmin.Data
 {
-    public class MenuItem
+    public class Product
     {
         public int Id { get; set; }
 

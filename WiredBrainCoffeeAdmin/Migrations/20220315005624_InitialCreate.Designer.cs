@@ -11,7 +11,7 @@ using WiredBrainCoffeeAdmin.Data;
 namespace WiredBrainCoffeeAdmin.Migrations
 {
     [DbContext(typeof(WiredBrainContext))]
-    [Migration("20220310005344_InitialCreate")]
+    [Migration("20220315005624_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,7 +19,7 @@ namespace WiredBrainCoffeeAdmin.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.2");
 
-            modelBuilder.Entity("WiredBrainCoffeeAdmin.Data.MenuItem", b =>
+            modelBuilder.Entity("WiredBrainCoffeeAdmin.Data.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,7 +52,7 @@ namespace WiredBrainCoffeeAdmin.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MenuItems");
+                    b.ToTable("Products");
 
                     b.HasData(
                         new

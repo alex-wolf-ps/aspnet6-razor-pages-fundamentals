@@ -1,5 +1,5 @@
 ﻿@using WiredBrainCoffeeAdmin.Data
-@model List<MenuItem>
+@model List<Product>
 
     <div class="table-responsive">
 <table class="table menu-items table-striped table-bordered table-hover">
@@ -24,7 +24,7 @@
                 <td>@item.Name</td>
                 <td>@item.ShortDescription.</td>
                 <td>@item.Price</td>
-                <td><a class="btn btn-secondary" asp-page="EditMenuItem" asp-route-id="@item.Id">Edit</a></td>
+                <td><a class="btn btn-secondary" asp-page="EditProduct" asp-route-id="@item.Id">Edit</a></td>
             </tr>
         }
     </tbody>
