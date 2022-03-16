@@ -59,7 +59,25 @@
                 </div>
                 <div class="col-md-4">
                     <div class="footer-pic">
-                        <p>Picture content goes here.</p>
+                        @{
+                            var urlPath = Context.Request.Path;
+                        }
+
+                        @switch(urlPath)
+                        {
+                            case "/":
+                                <img src="~/images/menu/cake.png" />
+                                break;
+                            case "/products/addproduct":
+                                <img src="~/images/menu/waffles.png" />
+                                break;
+                            case "/products/viewallproducts":
+                                <img src="~/images/menu/salad-house.png" />
+                                break;
+                            case "/help":
+                                <img src="~/images/menu/cappucino.png" />
+                                break;
+                        }
                     </div>
                 </div>
             </div>
