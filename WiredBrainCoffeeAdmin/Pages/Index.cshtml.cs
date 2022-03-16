@@ -14,6 +14,8 @@ namespace WiredBrainCoffeeAdmin.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+        public string Greeting { get; set; }
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
@@ -21,7 +23,7 @@ namespace WiredBrainCoffeeAdmin.Pages
 
         public void OnGet()
         {
-
+            Greeting = "hello world";
         }
     }
 }
