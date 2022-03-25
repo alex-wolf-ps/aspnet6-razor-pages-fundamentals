@@ -14,7 +14,7 @@ namespace WiredBrainCoffeeAdmin.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public string Greeting { get; set; }
+        public List<SurveyItem> SurveyResults { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -23,7 +23,10 @@ namespace WiredBrainCoffeeAdmin.Pages
 
         public void OnGet()
         {
-            Greeting = "hello world";
+            var rawJson = System.IO.File
+                .ReadAllText("wwwroot/sampledata/survey.json");
+
+            SurveyResults = JsonSerializer.Deserialize<List<SurveyItem>>(rawJson);
         }
     }
 }

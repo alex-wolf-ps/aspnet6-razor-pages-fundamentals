@@ -66,24 +66,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="footer-pic">
-                        @{
-                            var urlPath = Context.Request.Path;
-                        }
-
-                        @switch(urlPath)
+                        @if (IsSectionDefined("RightFooter"))
                         {
-                            case "/":
-                                <img src="~/images/menu/cake.png" />
-                                break;
-                            case "/products/addproduct":
-                                <img src="~/images/menu/waffles.png" />
-                                break;
-                            case "/products/viewallproducts":
-                                <img src="~/images/menu/salad-house.png" />
-                                break;
-                            case "/help":
-                                <img src="~/images/menu/cappucino.png" />
-                                break;
+                            @RenderSection("RightFooter")
+                        }
+                        else
+                        {
+                            <img src="~/images/menu/salad-house.png" />
                         }
                     </div>
                 </div>
