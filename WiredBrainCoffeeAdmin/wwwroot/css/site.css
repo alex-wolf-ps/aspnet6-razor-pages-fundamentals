@@ -81,4 +81,7 @@ textarea.form-control {
     min-height: 150px;
 }
 
+.field-validation-error {
+    color: red;
+}
 /* This is a version check. */

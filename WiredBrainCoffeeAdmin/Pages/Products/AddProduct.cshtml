@@ -13,6 +13,7 @@
             <div class="mb-3">
                 <label asp-for="NewProduct.Name">Name</label>
                 <input asp-for="NewProduct.Name" class="form-control" />
+                <span asp-validation-for="NewProduct.Name"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="NewProduct.ShortDescription">Short Description</label>
