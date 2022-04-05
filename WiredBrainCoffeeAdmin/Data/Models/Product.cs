@@ -9,10 +9,9 @@ namespace WiredBrainCoffeeAdmin.Data
 
         [Required]
         public string Name { get; set; }
-        [MaxLength(30)]
+        [MaxLength(300)]
         [Required]
         public string ShortDescription { get; set; }
-        [MinLength(20)]
         [Required]
         public string Description { get; set; }
         [Required]
@@ -20,6 +19,7 @@ namespace WiredBrainCoffeeAdmin.Data
         [Required]
         public string Category { get; set; }
 
+        [NotMapped]
         public IFormFile Upload { get; set; }
 
         public string ImageFileName { get; set; }
