@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<WiredContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("Wired Brain")));
+        builder.Configuration.GetConnectionString("WiredBrain")));
 
 var app = builder.Build();
 
