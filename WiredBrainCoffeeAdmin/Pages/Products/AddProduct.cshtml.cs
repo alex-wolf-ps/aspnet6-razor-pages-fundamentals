@@ -6,13 +6,13 @@ namespace WiredBrainCoffeeAdmin.Pages.Products
 {
     public class AddProductModel : PageModel
     {
-        private WiredContext wiredContext;
+        private IProductRepository productRepo;
         private IWebHostEnvironment webEnv;
 
-        public AddProductModel(WiredContext context,
+        public AddProductModel(IProductRepository productRepository,
             IWebHostEnvironment environment)
         {
-            this.wiredContext = context;
+            this.productRepo = productRepository;
             this.webEnv = environment;
         }
 
@@ -41,8 +41,7 @@ namespace WiredBrainCoffeeAdmin.Pages.Products
             }
 
             NewProduct.Created = DateTime.Now;
-            this.wiredContext.Products.Add(NewProduct);
-            var test = this.wiredContext.SaveChanges();
+            this.productRepo.Add(NewProduct);
 
             return RedirectToPage("ViewAllProducts");
         }

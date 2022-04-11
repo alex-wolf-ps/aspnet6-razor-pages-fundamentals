@@ -5,3 +5,50 @@
 
 <h1>Edit Product</h1>
 <hr />
+
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All"></div>
+            <div class="mb-3">
+                <label asp-for="EditProduct.Name">Name</label>
+                <input asp-for="EditProduct.Name" class="form-control" />
+                <span asp-validation-for="EditProduct.Name"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="EditProduct.ShortDescription">Short Description</label>
+                <input asp-for="EditProduct.ShortDescription" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="EditProduct.Description">Description</label>
+                <textarea asp-for="EditProduct.Description" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+                <label asp-for="EditProduct.Price">Price</label>
+                <input asp-for="EditProduct.Price" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="EditProduct.Category">Category</label>
+                <select asp-for="EditProduct.Category" class="form-control">
+                    <option value="Beverage">Beverage</option>
+                    <option value="Food">Food</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="EditProduct.ImageFileName">Current Image</label>
+                <input asp-for="EditProduct.ImageFileName" class="form-control" />
+                <img src="~/images/menu/@Model.EditProduct.ImageFileName" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="EditProduct.Upload">Image</label>
+                <input asp-for="EditProduct.Upload" class="form-control" />
+            </div>
+            
+            <button asp-page-handler="edit" class="btn btn-success">Submit</button>
+            <button asp-page-handler="delete" class="btn btn-danger float-end">Delete</button>
+        </form>
+
+
+    </div>
+</div>
