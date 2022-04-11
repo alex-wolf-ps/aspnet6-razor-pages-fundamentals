@@ -7,41 +7,7 @@
 
 <div class="row">
     <div class="col-md-6">
-        <form method="post" enctype="multipart/form-data">
-            <div asp-validation-summary="All"></div>
-            <div class="mb-3">
-                <label asp-for="NewProduct.Name">Name</label>
-                <input asp-for="NewProduct.Name" class="form-control" />
-                <span asp-validation-for="NewProduct.Name"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="NewProduct.ShortDescription">Short Description</label>
-                <input asp-for="NewProduct.ShortDescription" class="form-control" />
-            </div>
-            <div class="mb-3">
-                <label asp-for="NewProduct.Description">Description</label>
-                <textarea asp-for="NewProduct.Description" class="form-control"></textarea>
-            </div>
-            <div class="mb-3">
-                <label asp-for="NewProduct.Price">Price</label>
-                <input asp-for="NewProduct.Price" class="form-control" />
-            </div>
-            <div class="mb-3">
-                <label asp-for="NewProduct.Category">Category</label>
-                <select asp-for="NewProduct.Category" class="form-control">
-                    <option value="Beverage">Beverage</option>
-                    <option value="Food">Food</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label asp-for="NewProduct.Upload">Image</label>
-                <input asp-for="NewProduct.Upload" class="form-control" />
-            </div>
-
-            <button class="btn btn-success">Create</button>
-        </form>
-
-
+        <partial name="ProductForm" model="@Model.NewProduct" />
     </div>
     <div class="col-md-6">
         <partial name="HelpWidget" />

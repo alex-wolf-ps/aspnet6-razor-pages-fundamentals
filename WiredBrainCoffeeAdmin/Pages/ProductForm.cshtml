@@ -1,0 +1,50 @@
+﻿@using WiredBrainCoffeeAdmin.Data
+@model Product
+
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All"></div>
+    <div class="mb-3">
+        <label asp-for="@Model.Name">Name</label>
+        <input asp-for="@Model.Name" class="form-control" />
+        <span asp-validation-for="@Model.Name"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.ShortDescription">Short Description</label>
+        <input asp-for="@Model.ShortDescription" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Description">Description</label>
+        <textarea asp-for="@Model.Description" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Price">Price</label>
+        <input asp-for="@Model.Price" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Category">Category</label>
+        <select asp-for="@Model.Category" class="form-control">
+            <option value="Beverage">Beverage</option>
+            <option value="Food">Food</option>
+        </select>
+    </div>
+    @if(ViewContext.RouteData.Values["id"] is not null)
+    {
+        <div class="mb-3">
+            <label asp-for="@Model.ImageFileName">Current Image</label>
+            <input asp-for="@Model.ImageFileName" class="form-control" />
+            <img src="~/images/menu/@Model.ImageFileName" />
+        </div>
+    }
+    <div class="mb-3">
+        <label asp-for="@Model.Upload">Image</label>
+        <input asp-for="@Model.Upload" class="form-control" />
+    </div>
+    @if (ViewContext.RouteData.Values["id"] is not null)
+    {
+        <button asp-page-handler="edit" class="btn btn-success">Submit</button>
+        <button asp-page-handler="delete" class="btn btn-danger float-end">Delete</button>
+    } else
+    {
+        <button class="btn btn-success">Add</button>
+    }
+</form>
