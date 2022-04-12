@@ -9,8 +9,18 @@
     <hr />
     <div class="row">
         <div class="col-md-6">
+            <h2>Latest Products</h2>
+            <div class="table-responsive">
+            <vc:product-list count="4" />
+            </div>
             <h2>Latest Survey Results</h2>
             <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                    </tr>
+                </thead>
                 @foreach(var item in Model.SurveyResults)
                 {
                     <tr>
