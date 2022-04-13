@@ -9,6 +9,7 @@ builder.Services.AddDbContext<WiredContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("WiredBrain")));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddHttpClient();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
