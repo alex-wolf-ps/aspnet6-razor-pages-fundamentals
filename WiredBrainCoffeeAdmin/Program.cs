@@ -11,8 +11,6 @@ builder.Services.AddDbContext<WiredContext>(options =>
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 var app = builder.Build();
 
-await CreateDb(app.Services, app.Logger);
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -33,9 +31,3 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
-
-async Task CreateDb(IServiceProvider services, ILogger logger)
-{
-    using var db = services.CreateScope().ServiceProvider.GetRequiredService<WiredContext>();
-    await db.Database.MigrateAsync();
-}
