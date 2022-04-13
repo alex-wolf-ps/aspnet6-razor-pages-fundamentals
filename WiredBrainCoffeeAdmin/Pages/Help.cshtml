@@ -6,15 +6,54 @@
 <h1>Request Help</h1>
 <hr />
 
+@if (!string.IsNullOrEmpty(Model.ResponseMessage))
+{
+    <p class="alert alert-success">@Model.ResponseMessage</p>
+}
 <div class="row">
     <div class="col-md-6">
-        
+        <div class="card">
+            <div class="card-header">
+                Request Help
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Contact our IT Team</h5>
+                <p class="card-text">Having an issue with the site? Let us know!</p>
+                <form method="post">
+                    <label asp-for="NewTicket.Title">Title</label>
+                    <input asp-for="NewTicket.Title" class="form-control mb-3" />
+                    <label asp-for="NewTicket.Description">Description</label>
+                    <textarea asp-for="NewTicket.Description" class="form-control mb-3"></textarea>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="col-md-6">
-        
+        <h2>Current Issues</h2>
+        <hr />
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach(var item in Model.HelpTickets)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td>@item.Status</td>
+                </tr>
+            }</tbody>
+        </table>
     </div>
 </div>
-
 
 @section RightFooter {
     <p>Call us at: 123-456-7890</p>
