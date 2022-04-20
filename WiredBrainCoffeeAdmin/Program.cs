@@ -13,7 +13,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeltine.
 if (!app.Environment.IsDevelopment())
 {
     //app.UseExceptionHandler("/Error");
