@@ -14,8 +14,6 @@ namespace WiredBrainCoffeeAdmin.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public IDictionary<string, string> OrderStats { get; set; }
-
         public List<SurveyItem> SurveyResults { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)

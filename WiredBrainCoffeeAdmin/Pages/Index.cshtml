@@ -48,16 +48,6 @@
                 </div>
             </div>
             <partial name="HelpWidget" />
-            <h2>Weekly Stats</h2>
-            <table class="table table-bordered table-striped">
-                @foreach(var item in Model.OrderStats)
-                {
-                    <tr>
-                        <td>@item.Key</td>
-                        <td>@item.Value</td>
-                    </tr>
-                }
-            </table>
         </div>
     </div>
 </div>
