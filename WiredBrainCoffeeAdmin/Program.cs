@@ -14,6 +14,8 @@ builder.Services.AddHttpClient<ITicketService, TicketService>(options =>
             options.BaseAddress = new Uri("https://wiredbraincoffeeadmin.azurewebsites.net/"));
 var app = builder.Build();
 
+await EnsureDbCreated(app.Services, app.Logger);
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -34,3 +36,10 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+
+async Task EnsureDbCreated(IServiceProvider services, ILogger logger)
+{
+    using var db = services.CreateScope()
+        .ServiceProvider.GetRequiredService<WiredContext>();
+    await db.Database.MigrateAsync();
+}
