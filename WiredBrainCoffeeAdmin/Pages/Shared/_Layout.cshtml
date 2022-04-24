@@ -70,7 +70,7 @@
                             var urlPath = Context.Request.Path;
                         }
 
-                        @switch(urlPath)
+                        @switch(urlPath.ToString().ToLower())
                         {
                             case "/":
                                 <img src="~/images/menu/cake.png" />
@@ -78,7 +78,7 @@
                             case "/products/addproduct":
                                 <img src="~/images/menu/waffles.png" />
                                 break;
-                            case "/products/viewAllProducts":
+                            case "/products/viewallproducts":
                                 <img src="~/images/menu/salad-house.png" />
                                 break;
                             case "/help":
