@@ -91,5 +91,6 @@ table img {
 
 form img {
     max-width: 350px;
+    display: block;
 }
 /* This is a version check. */
