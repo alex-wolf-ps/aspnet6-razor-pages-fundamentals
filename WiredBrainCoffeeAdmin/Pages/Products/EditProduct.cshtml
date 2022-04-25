@@ -37,7 +37,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="EditProduct.ImageFileName">Current Image</label>
-                <input asp-for="EditProduct.ImageFileName" class="form-control" />
+                <input type="hidden" asp-for="EditProduct.ImageFileName" class="form-control" />
                 <img src="~/images/menu/@Model.EditProduct.ImageFileName" />
             </div>
             <div class="mb-3">
