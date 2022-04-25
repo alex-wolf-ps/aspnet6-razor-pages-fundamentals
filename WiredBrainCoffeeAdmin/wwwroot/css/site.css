@@ -84,4 +84,12 @@ textarea.form-control {
 .field-validation-error {
     color: red;
 }
+
+table img {
+    max-width: 200px;
+}
+
+form img {
+    max-width: 350px;
+}
 /* This is a version check. */
