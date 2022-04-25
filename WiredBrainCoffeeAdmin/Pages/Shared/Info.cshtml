@@ -1,0 +1,16 @@
+﻿<div class="card">
+    <div class="card-header">
+        The Basics
+    </div>
+    <div class="card-body">
+        <p>Hello, today is @DateTime.Today.Date.ToString("MM/dd/yyyy").</p>
+        @{
+            var temperature = 58;
+        }
+        <p>The current temperature is @temperature degrees.</p>
+        @if (temperature < 60)
+        {
+            <p>We recommend a coat until it warms up another @(65 - temperature) degrees!</p>
+        }
+    </div>
+</div>

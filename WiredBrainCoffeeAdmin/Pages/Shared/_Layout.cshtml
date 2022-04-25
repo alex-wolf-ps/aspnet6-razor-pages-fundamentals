@@ -4,55 +4,81 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Wired Brain Coffee Admin</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment names="Production">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    </environment>
+    
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WiredBrainCoffeeAdmin.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar top-nav wired-nav">
-            <a href="#">Wired Brain Coffee</a><img id="logo" src="~/images/menu/design.png"/> 
-        </nav>
-    </header>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-                <ul class="nav flex-column wired-nav">
-                  <li class="nav-header">
-                    Utilities
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" asp-page="Index">Dashboard</a>
-                  </li>
-                    <li class="nav-header">
-                     Menu Items
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" asp-page="ViewMenuItems">View All</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" asp-page="AddMenuItem">Add New</a>
-                  </li>
-                  <li class="nav-header">
-                    Orders
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">(Coming soon)</a>
-                  </li>
-                </ul>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Index">Dashboard</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Products
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                    <li><a class="dropdown-item" asp-page="/products/viewallproducts">View All</a></li>
+                                    <li><a class="dropdown-item" asp-page="/products/addproduct">Add New</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Orders (Coming soon)</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/help">Help</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="navbar-brand float-right">Wired Brain Coffee</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            @RenderBody()
+        </main>
+        <footer>
+            <div class="row">
+                <div class="col-md-4">
+                    <p>&copy; 2022 - WiredBrainCoffeeAdmin</p>
+                    <img id="logo" src="~/images/wired-brain-coffee-logo.png" />
+                </div>
+                <div class="col-md-4">
+                    <p>1234 Wired Brain Way</p>
+                    <p>Awesome City, CA 55555</p>
+                    <p>Phone: 555-123-4567</p>
+                    <p>Fax: 555-123-4567</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-pic">
+                        @if (IsSectionDefined("RightFooter"))
+                        {
+                            @RenderSection("RightFooter")
+                        }
+                        else
+                        {
+                            <img src="~/images/menu/salad-house.png" />
+                        }
+                    </div>
+                </div>
             </div>
-            <div class="col-md-10">
-                <main role="main">
-                    @RenderBody()
-                </main>
-            </div>
-        </div>
+        </footer>
     </div>
-    <footer class="text-muted">
-        <div class="container">
-            &copy; 2022 - WiredBrainCoffeeAdmin - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
