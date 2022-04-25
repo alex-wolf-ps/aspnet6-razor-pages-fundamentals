@@ -3,31 +3,27 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WiredBrainCoffeeAdmin.Data
 {
-    public class MenuItem
+    public class Product
     {
         public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }
-
-        [Required]
-        public string Description { get; set; }
-
+        [MaxLength(30)]
         [Required]
         public string ShortDescription { get; set; }
-
+        [MinLength(20)]
+        [Required]
+        public string Description { get; set; }
         [Required]
         public decimal Price { get; set; }
-
-        public string ImgFileName { get; set; }
-
-        [Required]
-        public DateTime Created { get; set; }
-
         [Required]
         public string Category { get; set; }
 
-        [NotMapped]
         public IFormFile Upload { get; set; }
+
+        public string ImageFileName { get; set; }
+
+        public DateTime Created { get; set; }
     }
 }
