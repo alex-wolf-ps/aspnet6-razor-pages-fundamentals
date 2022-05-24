@@ -18,11 +18,14 @@ namespace WiredBrainCoffeeAdmin.Pages
         public IDictionary<string, string> OrderStats { get; set; }
 
         public List<SurveyItem> SurveyResults { get; set; }
+        private IWebHostEnvironment webEnv;
 
-        public IndexModel(ILogger<IndexModel> logger, IHttpClientFactory httpFactory)
+        public IndexModel(ILogger<IndexModel> logger, IHttpClientFactory httpFactory,
+            IWebHostEnvironment environment)
         {
             _logger = logger;
             this.factory = httpFactory;
+            this.webEnv = environment;
         }
 
         public async Task<IActionResult> OnGet()
@@ -35,7 +38,7 @@ namespace WiredBrainCoffeeAdmin.Pages
             OrderStats = JsonSerializer.Deserialize<IDictionary<string, string>>(responseData);
 
             var rawJson = System.IO.File
-                .ReadAllText("wwwroot/sampledata/survey.json");
+                .ReadAllText(Path.Combine(webEnv.ContentRootPath, "wwwroot/sampledata/survey.json"));
 
             SurveyResults = JsonSerializer.Deserialize<List<SurveyItem>>(rawJson);
 
