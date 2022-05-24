@@ -37,7 +37,7 @@ var shared_config = [
 module wiredAdmin 'container_app.bicep' = {
   name: 'admin'
   params: {
-    name: 'admin'
+    name: 'wiredadmin'
     location: location
     registryPassword: acr.listCredentials().passwords[0].value
     registryUsername: acr.listCredentials().username
