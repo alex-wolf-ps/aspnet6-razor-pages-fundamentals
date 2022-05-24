@@ -49,7 +49,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    needs: provision
+    #needs: provision
     
     steps:
 
@@ -80,7 +80,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    #needs: build
+    needs: build
 
     steps:
 
