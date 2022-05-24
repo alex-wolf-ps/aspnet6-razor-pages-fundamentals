@@ -17,39 +17,39 @@ env:
   WIREDADMIN_IMAGE: wiredadmin
 
 jobs:
-  # provision:
-  #   runs-on: ubuntu-latest
+  provision:
+    runs-on: ubuntu-latest
 
-  #   steps:
+    steps:
 
-  #   - name: Checkout to the branch
-  #     uses: actions/checkout@v2
+    - name: Checkout to the branch
+      uses: actions/checkout@v2
 
-  #   - name: Azure Login
-  #     uses: azure/login@v1
-  #     with:
-  #       creds: ${{ secrets.AzureSPN }}
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AzureSPN }}
 
-  #   - name: Create resource group
-  #     uses: azure/CLI@v1
-  #     with:
-  #       inlineScript: >
-  #         echo "Creating resource group in Azure"
-  #         echo "Executing 'az group create -l ${{ env.REGION }} -n ${{ env.RESOURCE_GROUP_NAME }}'"
+    - name: Create resource group
+      uses: azure/CLI@v1
+      with:
+        inlineScript: >
+          echo "Creating resource group in Azure"
+          echo "Executing 'az group create -l ${{ env.REGION }} -n ${{ env.RESOURCE_GROUP_NAME }}'"
 
-  #         az group create -l ${{ env.REGION }} -n ${{ env.RESOURCE_GROUP_NAME }}
+          az group create -l ${{ env.REGION }} -n ${{ env.RESOURCE_GROUP_NAME }}
 
-  #   - name: Creating resources
-  #     uses: azure/CLI@v1
-  #     with:
-  #       inlineScript: >
-  #         echo "Creating resources"
+    - name: Creating resources
+      uses: azure/CLI@v1
+      with:
+        inlineScript: >
+          echo "Creating resources"
 
-  #         az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file '/github/workspace/Azure/main.bicep' --debug
+          az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file '/github/workspace/Azure/main.bicep' --debug
 
   build:
     runs-on: ubuntu-latest
-    #needs: provision
+    needs: provision
     
     steps:
 
