@@ -13,7 +13,7 @@ env:
   # specify your preferred region
   REGION: eastus
 
-  WIREDADMIN_DOCKER: wiredadmin/Dockerfile
+  WIREDADMIN_DOCKER: wiredbraincoffeeadmin/Dockerfile
   WIREDADMIN_IMAGE: wiredadmin
 
 jobs:
